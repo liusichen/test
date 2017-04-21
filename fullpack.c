@@ -18,8 +18,8 @@ int main(){
     
     for(j = 0; j <= lottery; j++)best[j] = 0;
     for(i = 0; i < numofprice; i++){
-	for(j = 1; j <= lottery; j++){
-	    if(need[i] < j){
+	for(j = 0; j <= lottery; j++){
+	    if(need[i] > j){
 		best[j]= best[j]>0?best[j]:0;    
 	    }
 	    else{

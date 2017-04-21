@@ -21,10 +21,11 @@ int main(){
 	t1 = n-b;
 	b1 = n-t;
     }
+    printf("l1=%d, r1=%d, t1=%d, b1=%d\n",l1,r1,t1,b1);
 
-    for(i = 1; i < L/2 && i <= n; i++){
-	for(j = 1; j < L/2 && j <= n; j++){
-	    if(i <= l1 && j <= t1){
+    for(i = 1; i < L/2 && i <= m; i++){
+	for(j = 1; j <= L/2-i && j <= n; j++){
+	    if(i <= l1 || j <= t1){
 		ans = ans > i*j?ans:i*j;
 	    }
 	    else if((i > l1 && i <= r1) && (j > t1 && j <= b1)){
@@ -35,6 +36,8 @@ int main(){
 	    }
 	    else
 		continue;
+	    	
+	    printf("i = %d ,j=%d,ans = %d\n",i,j,ans);
 	}
     }
     printf("%d\n",ans);
